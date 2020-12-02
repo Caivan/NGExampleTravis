@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "13.12.0"
+cache:
+  directories:
+     - ./ExampleAngularTravis/node_modules
+install:
+  - npm install
+script:
+  - npm run-script build
+deploy:
+  provider: heroku
+  api_key:
+    secure: 3f19c638-2f52-4549-9efd-bf653a2ae863
+  app: ng-travis-example
